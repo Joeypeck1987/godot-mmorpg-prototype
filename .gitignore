@@ -1,0 +1,27 @@
+# Godot 4 cache
+.godot/
+
+# Imported/generated files
+.import/
+*.import
+
+# Exported builds
+export/
+builds/
+*.exe
+*.pck
+*.apk
+*.aab
+*.dmg
+*.app
+*.zip
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
