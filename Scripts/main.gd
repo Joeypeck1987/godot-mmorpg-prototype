@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var player: CharacterBody2D = $Player
 @onready var collision_tilemap: TileMapLayer = $CollisionTileMap
+@onready var grave_tilemap: TileMapLayer = $GraveTileMap
 @onready var dialogue_box: Panel = $DialogueLayer/DialogueBox
 @onready var dialogue_text: Label = $DialogueLayer/DialogueBox/DialogueText
 
@@ -17,26 +18,45 @@ func _process(delta):
 		if dialogue_active:
 			advance_dialogue()
 		else:
-			try_inspect_tree()
+			try_inspect_object()
 
-func try_inspect_tree():
+func try_inspect_object():
 	var facing_direction = player.last_direction
-	var check_offset = Vector2.ZERO
+
+	var grave_offset = Vector2.ZERO
+	var tree_offset = Vector2.ZERO
 
 	if facing_direction == "down":
-		check_offset = Vector2(0, 32)
+		grave_offset = Vector2(0, 16)
+		tree_offset = Vector2(0, 32)
 	elif facing_direction == "up":
-		check_offset = Vector2(0, -32)
+		grave_offset = Vector2(0, -16)
+		tree_offset = Vector2(0, -32)
 	elif facing_direction == "left":
-		check_offset = Vector2(-32, 0)
+		grave_offset = Vector2(-16, 0)
+		tree_offset = Vector2(-32, 0)
 	elif facing_direction == "right":
-		check_offset = Vector2(32, 0)
+		grave_offset = Vector2(16, 0)
+		tree_offset = Vector2(32, 0)
 
-	var check_position = player.global_position + check_offset
-	var map_position = collision_tilemap.local_to_map(collision_tilemap.to_local(check_position))
-	var tile_data = collision_tilemap.get_cell_tile_data(map_position)
+	# Check graves first
+	var grave_check_position = player.global_position + grave_offset
+	var grave_map_position = grave_tilemap.local_to_map(grave_tilemap.to_local(grave_check_position))
+	var grave_tile_data = grave_tilemap.get_cell_tile_data(grave_map_position)
 
-	if tile_data != null:
+	if grave_tile_data != null:
+		start_dialogue([
+			"You stand before the old grave...",
+			"The name has been worn away by time."
+		])
+		return
+
+	# Check trees second
+	var tree_check_position = player.global_position + tree_offset
+	var tree_map_position = collision_tilemap.local_to_map(collision_tilemap.to_local(tree_check_position))
+	var tree_tile_data = collision_tilemap.get_cell_tile_data(tree_map_position)
+
+	if tree_tile_data != null:
 		start_dialogue([
 			"You inspect the old tree...",
 			"The forest is unusually quiet."
