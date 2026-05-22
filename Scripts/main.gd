@@ -82,3 +82,14 @@ func end_dialogue():
 	dialogue_box.visible = false
 	dialogue_lines = []
 	dialogue_index = 0
+
+#door enter and exit functions
+func _on_door_area_body_entered(body):
+	if body == player and not dialogue_active:
+		start_dialogue([
+			"You open the door..."
+		])
+
+func _on_door_area_body_exited(body):
+	if body == player:
+		end_dialogue()
