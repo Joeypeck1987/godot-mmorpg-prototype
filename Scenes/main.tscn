@@ -327,9 +327,7 @@ zoom = Vector2(2, 2)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_uuwbo")
-animation = &"walk_left"
-frame = 3
-frame_progress = 0.271928
+animation = &"walk_down"
 
 [node name="InteractionArea" type="Area2D" parent="Player"]
 
