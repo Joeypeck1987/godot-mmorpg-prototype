@@ -85,10 +85,8 @@ func end_dialogue():
 
 #door enter and exit functions
 func _on_door_area_body_entered(body):
-	if body == player and not dialogue_active:
-		start_dialogue([
-			"You open the door..."
-		])
+	if body == player:
+		get_tree().change_scene_to_file("res://Scenes/HouseInterior.tscn")
 
 func _on_door_area_body_exited(body):
 	if body == player:

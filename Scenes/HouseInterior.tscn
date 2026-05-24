@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://bbhsv5h0fdds6"]
+[gd_scene load_steps=33 format=4 uid="uid://bbhsv5h0fdds6"]
 
 [ext_resource type="Texture2D" uid="uid://cpsuurnw2sq6f" path="res://Sprites/tiles/interior/floor_interior_01.png" id="1_jcj52"]
 [ext_resource type="Script" path="res://Scripts/house_interior.gd" id="1_m4idn"]
@@ -42,6 +42,15 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_gl8nu"]
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_py4cy")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o0pvs"]
+texture = ExtResource("2_hydcv")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_53rhx"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_o0pvs")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dj2ns"]
 size = Vector2(16, 16)
@@ -155,15 +164,30 @@ size = Vector2(28, 28)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nxcu3"]
 size = Vector2(64, 16)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cfqyj"]
+size = Vector2(256, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kh11u"]
+size = Vector2(32, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mkjeh"]
+size = Vector2(32, 192)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4ofrh"]
+size = Vector2(96, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8v15h"]
+size = Vector2(96, 32)
+
 [node name="HouseInterior" type="Node2D"]
 script = ExtResource("1_m4idn")
 
 [node name="InteriorFloorTileMap" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAD/////AAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAP//AAAAAAAAAAABAP7/AAAAAAAAAAAAAP7/AAAAAAAAAAD///7/AAAAAAAAAAD+//7/AAAAAAAAAAD+////AAAAAAAAAAD+/wAAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAD+/wIAAAAAAAAAAAD//wIAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAACAAEAAAAAAAAAAAACAAAAAAAAAAAAAAACAP//AAAAAAAAAAACAP7/AAAAAAAAAAD9//7/AAAAAAAAAAD9////AAAAAAAAAAD9/wAAAAAAAAAAAAD9/wEAAAAAAAAAAAD9/wIAAAAAAAAAAAD9//3/AAAAAAAAAAD+//3/AAAAAAAAAAD///3/AAAAAAAAAAAAAP3/AAAAAAAAAAABAP3/AAAAAAAAAAACAP3/AAAAAAAAAAACAAMAAAAAAAAAAAACAPz/AAAAAAAAAAABAAMAAAAAAAAAAAAAAAMAAAAAAAAAAAD//wMAAAAAAAAAAAD+/wMAAAAAAAAAAAD9/wMAAAAAAAAAAAABAPz/AAAAAAAAAAAAAPz/AAAAAAAAAAD///z/AAAAAAAAAAD+//z/AAAAAAAAAAD9//z/AAAAAAAAAAADAPz/AAAAAAAAAAAEAPz/AAAAAAAAAAD8//z/AAAAAAAAAAD7//z/AAAAAAAAAAD7//3/AAAAAAAAAAD7//7/AAAAAAAAAAD7////AAAAAAAAAAD7/wAAAAAAAAAAAAD7/wEAAAAAAAAAAAD7/wIAAAAAAAAAAAD7/wMAAAAAAAAAAAD8//3/AAAAAAAAAAD8//7/AAAAAAAAAAD8////AAAAAAAAAAD8/wAAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAD8/wMAAAAAAAAAAAAEAP3/AAAAAAAAAAAEAP7/AAAAAAAAAAAEAP//AAAAAAAAAAAEAAAAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAMAAAAAAAAAAAADAP3/AAAAAAAAAAADAP7/AAAAAAAAAAADAP//AAAAAAAAAAADAAAAAAAAAAAAAAADAAEAAAAAAAAAAAADAAIAAAAAAAAAAAADAAMAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD//wAAAAAAAAAAAAD/////AAAAAAAAAAAAAP//AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAABAP//AAAAAAAAAAABAP7/AAAAAAAAAAAAAP7/AAAAAAAAAAD///7/AAAAAAAAAAD+//7/AAAAAAAAAAD+////AAAAAAAAAAD+/wAAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAD+/wIAAAAAAAAAAAD//wIAAAAAAAAAAAAAAAIAAAAAAAAAAAABAAIAAAAAAAAAAAACAAIAAAAAAAAAAAACAAEAAAAAAAAAAAACAAAAAAAAAAAAAAACAP//AAAAAAAAAAACAP7/AAAAAAAAAAD9//7/AAAAAAAAAAD9////AAAAAAAAAAD9/wAAAAAAAAAAAAD9/wEAAAAAAAAAAAD9/wIAAAAAAAAAAAD9//3/AAAAAAAAAAD+//3/AAAAAAAAAAD///3/AAAAAAAAAAAAAP3/AAAAAAAAAAABAP3/AAAAAAAAAAACAP3/AAAAAAAAAAAAAAMAAAAAAAAAAAD//wMAAAAAAAAAAAD8//3/AAAAAAAAAAD8//7/AAAAAAAAAAD8////AAAAAAAAAAD8/wAAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAADAP3/AAAAAAAAAAADAP7/AAAAAAAAAAADAP//AAAAAAAAAAADAAAAAAAAAAAAAAADAAEAAAAAAAAAAAADAAIAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_jh343")
 
 [node name="InteriorWallTileMap" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD7//v/AAAAAAAAAAD8//v/AAAAAAAAAAD9//v/AAAAAAAAAAD+//v/AAAAAAAAAAD///v/AAAAAAAAAAAAAPv/AAAAAAAAAAABAPv/AAAAAAAAAAACAPv/AAAAAAAAAAADAPv/AAAAAAAAAAAEAPv/AAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD8//z/AAAAAAAAAAD9//z/AAAAAAAAAAD+//z/AAAAAAAAAAD///z/AAAAAAAAAAAAAPz/AAAAAAAAAAABAPz/AAAAAAAAAAACAPz/AAAAAAAAAAADAPz/AAAAAAAAAAA=")
 tile_set = SubResource("TileSet_eqgox")
 
 [node name="InteriorDecorationTileMap" type="TileMapLayer" parent="."]
@@ -171,6 +195,7 @@ tile_map_data = PackedByteArray("AAD//wMAAAAAAAAAAAAAAAMAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_gl8nu")
 
 [node name="InteriorCollisionTileMap" type="TileMapLayer" parent="."]
+tile_set = SubResource("TileSet_53rhx")
 
 [node name="Player" type="CharacterBody2D" parent="."]
 position = Vector2(0, 58)
@@ -197,5 +222,27 @@ shape = SubResource("RectangleShape2D_bxx1v")
 [node name="ExitShape" type="CollisionShape2D" parent="ExitArea"]
 position = Vector2(0, 112)
 shape = SubResource("RectangleShape2D_nxcu3")
+
+[node name="RoomCollision" type="StaticBody2D" parent="."]
+
+[node name="TopWallCollision" type="CollisionShape2D" parent="RoomCollision"]
+position = Vector2(0, -112)
+shape = SubResource("RectangleShape2D_cfqyj")
+
+[node name="LeftWallCollision" type="CollisionShape2D" parent="RoomCollision"]
+position = Vector2(-144, 0)
+shape = SubResource("RectangleShape2D_kh11u")
+
+[node name="RightWallCollision" type="CollisionShape2D" parent="RoomCollision"]
+position = Vector2(144, 0)
+shape = SubResource("RectangleShape2D_mkjeh")
+
+[node name="BottomLeftCollision" type="CollisionShape2D" parent="RoomCollision"]
+position = Vector2(-80, 112)
+shape = SubResource("RectangleShape2D_4ofrh")
+
+[node name="BottomRightCollision" type="CollisionShape2D" parent="RoomCollision"]
+position = Vector2(80, 112)
+shape = SubResource("RectangleShape2D_8v15h")
 
 [connection signal="body_entered" from="ExitArea" to="." method="_on_exit_area_body_entered"]
