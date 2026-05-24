@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=4 uid="uid://bbhsv5h0fdds6"]
+[gd_scene load_steps=45 format=4 uid="uid://bbhsv5h0fdds6"]
 
 [ext_resource type="Texture2D" uid="uid://cpsuurnw2sq6f" path="res://Sprites/tiles/interior/floor_interior_01.png" id="1_jcj52"]
 [ext_resource type="Script" path="res://Scripts/house_interior.gd" id="1_m4idn"]
@@ -7,10 +7,14 @@
 [ext_resource type="Script" path="res://Scripts/player.gd" id="4_8281s"]
 [ext_resource type="Texture2D" uid="uid://plub0cgtnuko" path="res://Sprites/Player/joey.png" id="5_c6n73"]
 [ext_resource type="Texture2D" uid="uid://cw7sqpx836d3c" path="res://Sprites/tiles/interior/chair01.png" id="5_pm3bd"]
+[ext_resource type="Texture2D" uid="uid://cxklkfp44oq1l" path="res://Sprites/tiles/interior/bookshelf.png" id="6_036hd"]
 [ext_resource type="Texture2D" uid="uid://b31hmag2rranx" path="res://Sprites/Player/joey_left.png" id="6_wdkvk"]
 [ext_resource type="Texture2D" uid="uid://cab7g534bi212" path="res://Sprites/Player/joey_right.png" id="7_lcu8s"]
+[ext_resource type="Texture2D" uid="uid://qdhq2apqmapo" path="res://Sprites/tiles/interior/bookshelf_02.png" id="7_mmfik"]
+[ext_resource type="Texture2D" uid="uid://hp5dqp145fis" path="res://Sprites/tiles/interior/window.png" id="8_b1m84"]
 [ext_resource type="Texture2D" uid="uid://vvuinjk6sm85" path="res://Sprites/Player/joeyback.png" id="8_q6wnm"]
 [ext_resource type="Texture2D" uid="uid://6n5ntop4mkor" path="res://Sprites/Player/joeyrightstep.png" id="9_55s8i"]
+[ext_resource type="Texture2D" uid="uid://cxd3u8mwsla46" path="res://Sprites/tiles/interior/stairs.png" id="9_bjk0e"]
 [ext_resource type="Texture2D" uid="uid://7g6lyyidi5ks" path="res://Sprites/Player/joeyleftstep.png" id="10_ecbvd"]
 [ext_resource type="Texture2D" uid="uid://qyrmh5p6q407" path="res://Sprites/Player/joeyleft_leftstep.png" id="11_0mndx"]
 [ext_resource type="Texture2D" uid="uid://exdjtwf6r5dh" path="res://Sprites/Player/joeyright_rightstep.png" id="12_40syq"]
@@ -45,10 +49,33 @@ texture_region_size = Vector2i(32, 32)
 texture = ExtResource("5_pm3bd")
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yipvm"]
+texture = ExtResource("6_036hd")
+texture_region_size = Vector2i(16, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fsqwn"]
+texture = ExtResource("7_mmfik")
+texture_region_size = Vector2i(32, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ynufg"]
+texture = ExtResource("8_b1m84")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xm4ct"]
+texture = ExtResource("9_bjk0e")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_gl8nu"]
 tile_size = Vector2i(32, 32)
 sources/0 = SubResource("TileSetAtlasSource_py4cy")
 sources/1 = SubResource("TileSetAtlasSource_qer83")
+sources/2 = SubResource("TileSetAtlasSource_yipvm")
+sources/3 = SubResource("TileSetAtlasSource_fsqwn")
+sources/4 = SubResource("TileSetAtlasSource_ynufg")
+sources/5 = SubResource("TileSetAtlasSource_xm4ct")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_o0pvs"]
 texture = ExtResource("2_hydcv")
@@ -201,7 +228,7 @@ tile_map_data = PackedByteArray("AAD8//z/AAAAAAAAAAD9//z/AAAAAAAAAAD+//z/AAAAAAA
 tile_set = SubResource("TileSet_eqgox")
 
 [node name="InteriorDecorationTileMap" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAD//wMAAAAAAAAAAAAAAAMAAAAAAAAAAAD+/wAAAQAAAAAAAAD+////AQAAAAAAAAABAP//AQAAAAAAAAABAAAAAQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD//wMAAAAAAAAAAAAAAAMAAAAAAAAAAAD+/wAAAQAAAAAAAAD+////AQAAAAAAAAABAP//AQAAAAAAAAABAAAAAQAAAAAAAAD+//z/BAAAAAAAAAAAAPz/BAAAAAAAAAADAP3/BQAAAAAAAAD8//3/AwAAAAAAAAA=")
 tile_set = SubResource("TileSet_gl8nu")
 
 [node name="InteriorCollisionTileMap" type="TileMapLayer" parent="."]
