@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=4 uid="uid://c157av8ry750v"]
+[gd_scene load_steps=38 format=4 uid="uid://c157av8ry750v"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_jwevj"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_rlusl"]
@@ -17,7 +17,6 @@
 [ext_resource type="Texture2D" uid="uid://exdjtwf6r5dh" path="res://Sprites/Player/joeyright_rightstep.png" id="13_7torg"]
 [ext_resource type="Texture2D" uid="uid://b6frpx2auhjox" path="res://Sprites/Player/joeyback_rightstep.png" id="14_1imlv"]
 [ext_resource type="Texture2D" uid="uid://bc0ofdcallta2" path="res://Sprites/Player/joeyback_leftstep.png" id="15_cjn7t"]
-[ext_resource type="AudioStream" uid="uid://bbpp5cchm14ko" path="res://Audio/home.ogg" id="17_8q5a2"]
 [ext_resource type="Texture2D" uid="uid://dl5vo42xw5hpo" path="res://Sprites/tiles/house01.png" id="19_dsx8n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rc4rt"]
@@ -87,13 +86,13 @@ sources/0 = SubResource("TileSetAtlasSource_pfrr1")
 size = Vector2(64, 34)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4dr4m"]
-size = Vector2(10, 18)
+size = Vector2(9, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dujph"]
-size = Vector2(31, 20)
+size = Vector2(29, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d835k"]
-size = Vector2(20, 9)
+size = Vector2(24, 9)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_udnkw"]
 size = Vector2(16, 16)
@@ -253,11 +252,11 @@ position = Vector2(-38, -95)
 shape = SubResource("RectangleShape2D_khysd")
 
 [node name="LeftHouseCollisionShape" type="CollisionShape2D" parent="House01/HouseCollision"]
-position = Vector2(-64, -74)
+position = Vector2(-65.5, -75)
 shape = SubResource("RectangleShape2D_4dr4m")
 
 [node name="RightHouseCollisionShape" type="CollisionShape2D" parent="House01/HouseCollision"]
-position = Vector2(-23.5, -75)
+position = Vector2(-22.5, -75)
 shape = SubResource("RectangleShape2D_dujph")
 
 [node name="DoorArea" type="Area2D" parent="House01"]
@@ -361,11 +360,6 @@ text = "Dialogue Test.
 "
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("17_8q5a2")
-volume_db = -8.0
-autoplay = true
 
 [connection signal="body_entered" from="House01/DoorArea" to="." method="_on_door_area_body_entered"]
 [connection signal="body_exited" from="House01/DoorArea" to="." method="_on_door_area_body_exited"]
