@@ -6,6 +6,8 @@ extends Node2D
 @onready var monk_npc: Node2D = $MonkNPC
 @onready var monk_sprite: AnimatedSprite2D = $MonkNPC/AnimatedSprite2D
 
+var monk_idle_timer: float = 0.0
+var monk_idle_interval: float = 2.0
 var near_monk: bool = false
 var near_bookshelf: bool = false
 var near_stairs: bool = false
@@ -15,8 +17,12 @@ var dialogue_active: bool = false
 
 func _ready():
 	dialogue_box.visible = false
+	randomize()
+	monk_idle_timer = randf_range(1.0, 2.5)
 
 func _process(delta):
+	if not near_monk and not dialogue_active:
+		update_monk_idle(delta)
 	if Input.is_action_just_pressed("interact"):
 		if dialogue_active:
 			advance_dialogue()
@@ -55,6 +61,22 @@ func turn_monk_to_face_player():
 			monk_sprite.play("idle_down")
 		else:
 			monk_sprite.play("idle_up")
+	
+func update_monk_idle(delta):
+	monk_idle_timer -= delta
+
+	if monk_idle_timer <= 0:
+		var directions = [
+			"idle_down",
+			"idle_up",
+			"idle_left",
+			"idle_right"
+		]
+
+		var random_direction = directions.pick_random()
+		monk_sprite.play(random_direction)
+
+		monk_idle_timer = randf_range(1.0, 3.0)
 
 func start_dialogue(lines: Array[String]):
 	dialogue_lines = lines
