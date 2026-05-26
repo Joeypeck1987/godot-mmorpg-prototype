@@ -9,23 +9,39 @@ var last_direction: String = "down"
 func _physics_process(delta):
 	var direction = Vector2.ZERO
 
+	var horizontal_input = 0
+	var vertical_input = 0
+
 	if Input.is_action_pressed("move_right"):
-		direction.x += 1
-		last_direction = "right"
+		horizontal_input += 1
 
 	if Input.is_action_pressed("move_left"):
-		direction.x -= 1
-		last_direction = "left"
+		horizontal_input -= 1
 
 	if Input.is_action_pressed("move_down"):
-		direction.y += 1
-		last_direction = "down"
+		vertical_input += 1
 
 	if Input.is_action_pressed("move_up"):
-		direction.y -= 1
-		last_direction = "up"
+		vertical_input -= 1
 
-	direction = direction.normalized()
+	# Prevent diagonal movement.
+	# Horizontal movement takes priority if both are pressed.
+	if horizontal_input != 0:
+		direction.x = horizontal_input
+
+		if horizontal_input > 0:
+			last_direction = "right"
+		else:
+			last_direction = "left"
+
+	elif vertical_input != 0:
+		direction.y = vertical_input
+
+		if vertical_input > 0:
+			last_direction = "down"
+		else:
+			last_direction = "up"
+
 	velocity = direction * speed
 
 	move_and_slide()
