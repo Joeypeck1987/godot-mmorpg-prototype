@@ -101,34 +101,34 @@ func end_dialogue():
 
 #bookshelf interaction functions
 func _on_bookshelf_inspect_area_body_entered(body):
-	if body.name == "Player":
+	if body == player:
 		near_bookshelf = true
 
 func _on_bookshelf_inspect_area_body_exited(body):
-	if body.name == "Player":
+	if body == player:
 		near_bookshelf = false
 		end_dialogue()
 
 func _on_exit_area_body_entered(body):
-	if body.name == "Player":
+	if body == player:
 		get_tree().change_scene_to_file("res://Scenes/main.tscn")
 
 #Stair signal functions
 func _on_stairs_inspect_area_body_entered(body):
-	if body.name == "Player":
+	if body == player:
 		near_stairs = true
 
 func _on_stairs_inspect_area_body_exited(body):
-	if body.name == "Player":
+	if body == player:
 		near_stairs = false
 		end_dialogue()
 		
 #monk signal functions
 func _on_monk_talk_area_body_entered(body):
-	if body.name == "Player":
+	if body == player:
 		near_monk = true
 
 func _on_monk_talk_area_body_exited(body):
-	if body.name == "Player":
+	if body == player:
 		near_monk = false
 		end_dialogue()
