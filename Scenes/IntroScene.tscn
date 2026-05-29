@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8c4n5lar8c5u"]
+
+[ext_resource type="Script" path="res://Scenes/intro_scene.gd" id="1_behtr"]
+[ext_resource type="Texture2D" uid="uid://bxpcqnblyodxn" path="res://Sprites/NPC/captain_intro.png" id="2_qshbw"]
+[ext_resource type="Texture2D" uid="uid://d0qbj76s0pk5c" path="res://Sprites/backgrounds/stillturn_boat_background_soft_blur.png" id="2_uxprf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mmiow"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="IntroScene" type="Node2D"]
+script = ExtResource("1_behtr")
+
+[node name="BoatBackground" type="Sprite2D" parent="."]
+texture_filter = 2
+texture = ExtResource("2_uxprf")
+offset = Vector2(320, 180)
+
+[node name="CaptainIntroSprite" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(324, 198)
+scale = Vector2(2, 2)
+texture = ExtResource("2_qshbw")
+
+[node name="DialogueLayer" type="CanvasLayer" parent="."]
+
+[node name="DialogueBox" type="Panel" parent="DialogueLayer"]
+offset_left = 20.0
+offset_top = 250.0
+offset_right = 620.0
+offset_bottom = 342.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mmiow")
+
+[node name="DialogueText" type="Label" parent="DialogueLayer/DialogueBox"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 584.0
+offset_bottom = 80.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
