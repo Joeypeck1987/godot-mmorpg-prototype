@@ -5,6 +5,7 @@ extends Node2D
 @onready var grave_tilemap: TileMapLayer = $GraveTileMap
 @onready var dialogue_box: Panel = $DialogueLayer/DialogueBox
 @onready var dialogue_text: Label = $DialogueLayer/DialogueBox/DialogueText
+@onready var fade_overlay: ColorRect = $FadeLayer/FadeOverlay
 
 var dialogue_lines: Array[String] = []
 var dialogue_index: int = 0
@@ -12,6 +13,15 @@ var dialogue_active: bool = false
 
 func _ready():
 	dialogue_box.visible = false
+	MusicManager.play_music("res://Audio/ashport.ogg", -8.0)
+	
+	fade_overlay.position = Vector2.ZERO
+	fade_overlay.size = get_viewport_rect().size
+	fade_overlay.color = Color.BLACK
+	fade_overlay.modulate.a = 1.0
+
+	var tween := create_tween()
+	tween.tween_property(fade_overlay, "modulate:a", 0.0, 1.5)
 
 func _process(delta):
 	if Input.is_action_just_pressed("interact"):
@@ -91,3 +101,8 @@ func _on_door_area_body_entered(body):
 func _on_door_area_body_exited(body):
 	if body == player:
 		end_dialogue()
+
+func _notification(what):
+	if what == NOTIFICATION_WM_SIZE_CHANGED:
+		if fade_overlay:
+			fade_overlay.size = get_viewport_rect().size

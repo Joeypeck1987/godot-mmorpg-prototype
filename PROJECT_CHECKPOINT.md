@@ -55,3 +55,38 @@ Finish polishing IntroScene.tscn:
 - Decide whether to use the soft-blur or medium-blur boat background
 - Confirm the intro transitions cleanly into main.tscn
 - Then commit the intro scene and assets
+
+## Latest Progress - Intro Fade and Music Manager
+
+Godot version: 4.3 stable
+
+Polished the intro scene flow.
+
+Current intro behavior:
+- `IntroScene.tscn` fades in from black
+- Dialogue box appears after the fade-in completes
+- Intro dialogue advances with the existing `interact` action
+- After the final intro line, the scene fades out
+- The game transitions into `res://Scenes/main.tscn`
+- Ashport fades in after loading
+
+Music behavior:
+- Reworked `music_manager.gd` so it no longer automatically plays music on startup
+- Music is now controlled per scene through `MusicManager.play_music()`
+- `IntroScene.tscn` plays `res://Audio/intro.ogg`
+- `main.tscn` / Ashport plays `res://Audio/ashport.ogg`
+- Removed/disabled duplicate local music nodes to prevent two songs playing at once
+
+Visual direction:
+- Intro background fills the screen
+- Captain portrait is centered and uses nearest texture filtering
+- Dialogue box remains solid white with black text
+- FadeOverlay handles intro fade-in and fade-out
+- Ashport uses a FadeLayer/FadeOverlay for fade-in after scene load
+
+Known stable state:
+- Intro scene works
+- Intro music works
+- Transition into Ashport works
+- Ashport music works
+- Player movement and interaction remain intact
