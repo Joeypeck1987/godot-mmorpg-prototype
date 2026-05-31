@@ -4,6 +4,10 @@ Godot version: 4.3 stable
 
 ## Current Working Features
 
+- GitHub repo is working
+- PROJECT_CHECKPOINT.md exists in the project root
+- `main.tscn` works
+- `HouseInterior.tscn` works
 - Player movement works
 - Player moves only on straight axes, no diagonal movement
 - Player animation works
@@ -11,82 +15,57 @@ Godot version: 4.3 stable
 - Tree inspection works
 - Grave inspection works
 - Dialogue box works
-- Background music works
 - House entry works
-- HouseInterior.tscn works
-- Rug exit returns to main.tscn
+- Rug exit returns to `main.tscn`
 - Bookshelf interaction works
 - Stair interaction works
 - MonkNPC works
 - Monk turns to face player during interaction
 - Monk idly changes facing direction when not being interacted with
+- IntroScene works
+- Intro scene transitions cleanly into Ashport
+- Scene-based music switching works
+- Intro fade-in/fade-out works
+- Ashport fade-in works
 
 ## Current Story Direction
 
 - Working title: Stillturn
-- World: Veyr
+- World name currently remains Veyr, but may be renamed later
+- The intro does not name the whole world yet
 - Player is a Wayfarer
 - Player should not start with Affinity
 - Early player should be physical-only
 - Affinity awakens later when it calls to the player
-- Opening idea: player begins on a boat and arrives at a port village
+- Opening: player begins on a boat and arrives at the port village of Ashport
+- The captain introduces Ashport, the ringing bells, dead men walking, changed beasts, strange roads, and Wayfarers
 
-## Next Planned Step
+## Intro Scene Current State
 
-Create a reusable NPC system, then use it to add a sea captain NPC.
-
-## Intro Scene Progress
-
-- IntroScene.tscn has been created
-- BoatBackground sprite has been added using the grayscale ship deck background
-- CaptainIntroSprite has been added using captain_intro.png
-- DialogueLayer, DialogueBox, and DialogueText have been added
+- `IntroScene.tscn` has been created
+- Root is a `Control` node
+- Boat background fills the screen
+- Boat background uses blurred grayscale ship deck art
+- CaptainIntroSprite uses `captain_intro.png`
+- Captain sprite uses nearest texture filtering for crisp pixel art
+- Captain portrait is centered
+- DialogueLayer, DialogueBox, and DialogueText are present
 - DialogueBox is styled as a solid white box with black text
-- Intro dialogue advances with the interact button
-- Current intro uses the sea captain as the opening guide
-- Intro dialogue introduces Ashport, the ringing bells, dead men walking, changed beasts, strange roads, and Wayfarers
-- The broader world name is currently undecided; the intro uses Ashport instead of naming the whole world
-- Blurred versions of the boat background were created for possible use behind the sharper captain sprite
-
-## Next Planned Step
-
-Finish polishing IntroScene.tscn:
-- Make CaptainIntroSprite crisp with nearest texture filtering
-- Decide whether to use the soft-blur or medium-blur boat background
-- Confirm the intro transitions cleanly into main.tscn
-- Then commit the intro scene and assets
-
-## Latest Progress - Intro Fade and Music Manager
-
-Godot version: 4.3 stable
-
-Polished the intro scene flow.
-
-Current intro behavior:
-- `IntroScene.tscn` fades in from black
-- Dialogue box appears after the fade-in completes
 - Intro dialogue advances with the existing `interact` action
-- After the final intro line, the scene fades out
-- The game transitions into `res://Scenes/main.tscn`
-- Ashport fades in after loading
+- Dialogue box appears after the intro fade-in completes
+- After the final intro dialogue line, the scene fades out
+- Intro transitions to `res://Scenes/main.tscn`
 
-Music behavior:
-- Reworked `music_manager.gd` so it no longer automatically plays music on startup
-- Music is now controlled per scene through `MusicManager.play_music()`
-- `IntroScene.tscn` plays `res://Audio/intro.ogg`
-- `main.tscn` / Ashport plays `res://Audio/ashport.ogg`
-- Removed/disabled duplicate local music nodes to prevent two songs playing at once
+## Current Intro Dialogue
 
-Visual direction:
-- Intro background fills the screen
-- Captain portrait is centered and uses nearest texture filtering
-- Dialogue box remains solid white with black text
-- FadeOverlay handles intro fade-in and fade-out
-- Ashport uses a FadeLayer/FadeOverlay for fade-in after scene load
-
-Known stable state:
-- Intro scene works
-- Intro music works
-- Transition into Ashport works
-- Ashport music works
-- Player movement and interaction remain intact
+```text
+"Easy now. The tide carried you farther than most folk dare go."
+"The shore ahead is Ashport."
+"But keep your eyes open..."
+"..."
+"The bells have started ringing again."
+"..."
+"Dead men walk... Beasts change shape... Old roads lead where they should not..."
+"...Some hear the bells and keep walking..."
+"We call those ones Wayfarers."
+"Now then... let us get you ashore."
