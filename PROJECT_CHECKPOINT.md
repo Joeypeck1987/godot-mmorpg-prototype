@@ -100,3 +100,15 @@ Godot version: 4.3 stable
 - CaptainNPC interaction works
 - Y-sort works for player/NPC layering
 - Dialogue text now wraps inside the dialogue box
+
+
+## Latest Stable Checkpoint
+
+- Water collision has been added around the Ashport shore/dock area.
+- Player can no longer walk on the water.
+- Dock, dock platform, shore, captain area, and boat area remain usable.
+- WreckedBoat collision still works.
+- CaptainNPC collision and dialogue still work.
+- Y-sort issue with player/house visibility was fixed.
+- Houses are visible again in-game.
+- Current next step: visual shoreline cleanup around the dock and water edge.

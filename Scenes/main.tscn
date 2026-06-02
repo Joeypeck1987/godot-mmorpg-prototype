@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=4 uid="uid://c157av8ry750v"]
+[gd_scene load_steps=57 format=4 uid="uid://c157av8ry750v"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_jwevj"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_rlusl"]
@@ -254,6 +254,27 @@ size = Vector2(14, 12)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qf1em"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_grgwm"]
+size = Vector2(352, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnxrs"]
+size = Vector2(30, 89)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvafc"]
+size = Vector2(288, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2t5sc"]
+size = Vector2(32, 155)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d3aom"]
+size = Vector2(32, 416)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wxl5g"]
+size = Vector2(192, 38)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_w542o"]
+size = Vector2(32, 63)
+
 [node name="Main" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_rlusl")
@@ -285,6 +306,7 @@ tile_map_data = PackedByteArray("AAAHAP7/AAAAAAAAAAAKAP7/AAAAAAAAAAAIAP//AAAAAAA
 tile_set = SubResource("TileSet_jivos")
 
 [node name="House01" type="Sprite2D" parent="."]
+z_index = 5
 position = Vector2(-39, -87)
 texture = ExtResource("19_dsx8n")
 
@@ -310,6 +332,7 @@ position = Vector2(-10, 13.5)
 shape = SubResource("RectangleShape2D_d835k")
 
 [node name="House02" type="Sprite2D" parent="."]
+z_index = 5
 position = Vector2(60, -55)
 texture = ExtResource("19_dsx8n")
 
@@ -335,6 +358,7 @@ position = Vector2(-10, 13.5)
 shape = SubResource("RectangleShape2D_d835k")
 
 [node name="House03" type="Sprite2D" parent="."]
+z_index = 5
 position = Vector2(225, -88)
 texture = ExtResource("19_dsx8n")
 
@@ -360,6 +384,7 @@ position = Vector2(-10, 13.5)
 shape = SubResource("RectangleShape2D_d835k")
 
 [node name="Player" type="CharacterBody2D" parent="."]
+z_index = 10
 y_sort_enabled = true
 position = Vector2(-954, 825)
 script = ExtResource("1_jwevj")
@@ -456,6 +481,36 @@ shape = SubResource("RectangleShape2D_tn0wh")
 [node name="CaptainTalkShape" type="CollisionShape2D" parent="CaptainNPC/CaptainTalkArea"]
 position = Vector2(7, 0)
 shape = SubResource("RectangleShape2D_qf1em")
+
+[node name="WaterCollision" type="StaticBody2D" parent="."]
+
+[node name="WaterCollisionShape01" type="CollisionShape2D" parent="WaterCollision"]
+position = Vector2(-848, 784)
+shape = SubResource("RectangleShape2D_grgwm")
+
+[node name="WaterCollisionShape02" type="CollisionShape2D" parent="WaterCollision"]
+position = Vector2(-1039, 844.5)
+shape = SubResource("RectangleShape2D_gnxrs")
+
+[node name="WaterCollisionShape03" type="CollisionShape2D" parent="WaterCollision"]
+position = Vector2(-752, 872)
+shape = SubResource("RectangleShape2D_mvafc")
+
+[node name="WaterCollisionShape04" type="CollisionShape2D" parent="WaterCollision"]
+position = Vector2(-592, 781.5)
+shape = SubResource("RectangleShape2D_2t5sc")
+
+[node name="WaterCollisionShape05" type="CollisionShape2D" parent="WaterCollision"]
+position = Vector2(-688, 560)
+shape = SubResource("RectangleShape2D_d3aom")
+
+[node name="WaterCollisionShape06" type="CollisionShape2D" parent="WaterCollision"]
+position = Vector2(-480, 717)
+shape = SubResource("RectangleShape2D_wxl5g")
+
+[node name="WaterCollisionShape07" type="CollisionShape2D" parent="WaterCollision"]
+position = Vector2(-368, 671.5)
+shape = SubResource("RectangleShape2D_w542o")
 
 [connection signal="body_entered" from="House01/DoorArea" to="." method="_on_door_area_body_entered"]
 [connection signal="body_exited" from="House01/DoorArea" to="." method="_on_door_area_body_exited"]
