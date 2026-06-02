@@ -10,6 +10,7 @@ extends Node2D
 var dialogue_lines: Array[String] = []
 var dialogue_index: int = 0
 var dialogue_active: bool = false
+var near_captain := false
 
 func _ready():
 	dialogue_box.visible = false
@@ -28,7 +29,15 @@ func _process(delta):
 		if dialogue_active:
 			advance_dialogue()
 		else:
-			try_inspect_object()
+			if near_captain:
+				start_dialogue([
+					"The captain looks over the wrecked boat and sighs.",
+					"\"Well... she has looked better.\"",
+					"\"The tide brought us in, but it may not let us leave just yet.\"",
+					"\"Go on ahead and see if you can find any supplies. I will see what can be saved here.\""
+					])
+			else:
+				try_inspect_object()
 
 func try_inspect_object():
 	var facing_direction = player.last_direction
@@ -106,3 +115,13 @@ func _notification(what):
 	if what == NOTIFICATION_WM_SIZE_CHANGED:
 		if fade_overlay:
 			fade_overlay.size = get_viewport_rect().size
+
+#Captain dialogue area
+func _on_captain_talk_area_body_entered(body):
+	if body.name == "Player":
+		near_captain = true
+
+
+func _on_captain_talk_area_body_exited(body):
+	if body.name == "Player":
+		near_captain = false

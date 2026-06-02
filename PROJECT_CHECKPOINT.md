@@ -69,3 +69,34 @@ Godot version: 4.3 stable
 "...Some hear the bells and keep walking..."
 "We call those ones Wayfarers."
 "Now then... let us get you ashore."
+
+
+## Ashport Shore Progress
+
+- Ashport exterior is now being reshaped from the original village layout into a coastal shore area.
+- Bottom collision-tree border has been opened to create a path from town down toward the shore.
+- Player can walk from the town area into the new shore area.
+- WaterTileMap is working and water tiles can be painted correctly.
+- Dock tiles have been added to the GroundTileMap TileSet and can be painted correctly.
+- A walkable dock has been placed leading out into the water.
+- A dock platform has been added and is walkable.
+- WreckedBoat has been added as a Sprite2D object near the dock.
+- WreckedBoat collision works using StaticBody2D + CollisionShape2D.
+- CaptainNPC has been added near the wrecked boat/dock area.
+- Captain collision works.
+- Y-sort has been enabled so the player/captain draw order works correctly.
+- CaptainTalkArea has been added and detects the player.
+- Captain dialogue works through the existing dialogue system.
+- DialogueText wrapping/clipping/font size has been adjusted so dialogue no longer bleeds outside the box.
+
+- Ashport shore path works
+- Water painting works
+- Dock painting works
+- Dock is walkable
+- Wrecked boat object works
+- Wrecked boat collision works
+- CaptainNPC is placed in Ashport
+- CaptainNPC collision works
+- CaptainNPC interaction works
+- Y-sort works for player/NPC layering
+- Dialogue text now wraps inside the dialogue box
