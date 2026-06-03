@@ -58,7 +58,6 @@ Godot version: 4.3 stable
 
 ## Current Intro Dialogue
 
-```text
 "Easy now. The tide carried you farther than most folk dare go."
 "The shore ahead is Ashport."
 "But keep your eyes open..."
@@ -112,3 +111,17 @@ Godot version: 4.3 stable
 - Y-sort issue with player/house visibility was fixed.
 - Houses are visible again in-game.
 - Current next step: visual shoreline cleanup around the dock and water edge.
+
+
+## Latest Stable Checkpoint 6/3/2026
+
+- Shoreline visual cleanup has started.
+- Top, left, and right shoreline border tiles work.
+- Shore edge around the dock has been cleaned up.
+- Corner shoreline tiles are still needed later.
+- SupplyChest has been added near Ashport shore/dock area.
+- SupplyChest collision works.
+- SupplyChest inspect area detects the player.
+- SupplyChest dialogue works.
+- Captain dialogue and SupplyChest dialogue both work correctly.
+- Current next step: make Ashport shore visually cleaner, then decide whether to create corner shore tiles or add a simple supply objective flag.

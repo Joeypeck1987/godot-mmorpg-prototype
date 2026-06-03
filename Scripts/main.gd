@@ -11,6 +11,7 @@ var dialogue_lines: Array[String] = []
 var dialogue_index: int = 0
 var dialogue_active: bool = false
 var near_captain := false
+var near_supply_chest: bool = false
 
 func _ready():
 	dialogue_box.visible = false
@@ -31,11 +32,16 @@ func _process(delta):
 		else:
 			if near_captain:
 				start_dialogue([
-					"The captain looks over the wrecked boat and sighs.",
-					"\"Well... she has looked better.\"",
-					"\"The tide brought us in, but it may not let us leave just yet.\"",
-					"\"Go on ahead and see if you can find any supplies. I will see what can be saved here.\""
-					])
+		"The captain looks over the wrecked boat and sighs.",
+		"\"Well... she has looked better.\"",
+		"\"The tide brought us in, but it may not let us leave just yet.\"",
+		"\"Go on ahead and see if you can find any supplies. I will see what can be saved here.\""
+	])
+			elif near_supply_chest:
+				start_dialogue([
+		"You find a damp supply chest.",
+		"Most of it is ruined, but a few tools might still be useful."
+	])
 			else:
 				try_inspect_object()
 
@@ -125,3 +131,13 @@ func _on_captain_talk_area_body_entered(body):
 func _on_captain_talk_area_body_exited(body):
 	if body.name == "Player":
 		near_captain = false
+
+
+func _on_supply_chest_inspect_area_body_entered(body):
+	if body.name == "Player":
+		near_supply_chest = true
+
+
+func _on_supply_chest_inspect_area_body_exited(body):
+	if body.name == "Player":
+		near_supply_chest = false
