@@ -9,14 +9,9 @@ extends Control
 var intro_lines := [
 	"Easy now. The tide carried you farther than most folk dare go.",
 	"The shore ahead is Ashport.",
-	"But keep your eyes open...",
-	"...",
-	"The bells have started ringing again.",
-	"...",
-	"Dead men walk... Beasts change shape... Old roads lead where they should not...",
-	"...Some hear the bells and keep walking...",
-	"We call those ones Wayfarers.",
-	"Now then... let us get you ashore."
+	"...Wait.",
+	"That current is wrong.",
+	"Brace yourself!"
 ]
 
 var dialogue_index := 0

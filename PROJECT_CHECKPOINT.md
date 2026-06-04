@@ -133,3 +133,23 @@ Godot version: 4.3 stable
 - Captain dialogue still works.
 - Chest dialogue still works.
 - Next step: make captain dialogue change after supplies are found, but only after reviewing the full `_process()` function first.
+
+## Character Creation Plan - 06/04/2026
+
+- Character creation should happen during the boat intro before the wreck.
+- Player should be able to enter a name.
+- Player should choose a base sprite, starting with male and female options.
+- Hair, eyes, and mouth customization are desired later.
+- For the prototype, use full sprite choices first instead of a complex layered character system.
+- Affinity should not be chosen during character creation.
+- Affinity still awakens later in the story.
+
+## Latest Stable Checkpoint - 06/04/2026
+
+- SupplyChest interaction still works.
+- Inspecting SupplyChest sets `found_supplies = true`.
+- Captain dialogue now changes after supplies are found.
+- Before supplies, captain asks player to search for supplies.
+- After supplies, captain confirms they help but are not enough to sail.
+- Sea travel remains locked for much later in the story.
+- Next step: update/polish the intro so the ship gets pulled off course before Ashport.

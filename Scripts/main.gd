@@ -32,18 +32,26 @@ func _process(delta):
 			advance_dialogue()
 		else:
 			if near_captain:
-				start_dialogue([
-		"The captain looks over the wrecked boat and sighs.",
-		"\"Well... she has looked better.\"",
-		"\"The tide brought us in, but it may not let us leave just yet.\"",
-		"\"Go on ahead and see if you can find any supplies. I will see what can be saved here.\""
-	])
+				if found_supplies:
+					start_dialogue([
+						"The captain checks over the supplies and gives a tired little nod.",
+						"\"Well, this helps. Not enough to get us sailing, but enough to keep us from looking completely hopeless.\"",
+						"\"The boat needs more than a few tools and wishful thinking.\"",
+						"\"Go on into Ashport. Get your footing. I will see what can be saved here.\""
+					])
+				else:
+					start_dialogue([
+						"The captain looks over the wrecked boat and sighs.",
+						"\"Well... she has looked better.\"",
+						"\"The tide brought us in, but it may not let us leave just yet.\"",
+						"\"Go on ahead and see if you can find any supplies. I will see what can be saved here.\""
+					])
 			elif near_supply_chest:
 				found_supplies = true
 				start_dialogue([
-				"You find a damp supply chest.",
-				"Most of it is ruined, but a few tools might still be useful."
-	])
+					"You find a damp supply chest.",
+					"Most of it is ruined, but a few tools might still be useful."
+				])
 			else:
 				try_inspect_object()
 
