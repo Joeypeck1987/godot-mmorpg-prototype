@@ -12,6 +12,7 @@ var dialogue_index: int = 0
 var dialogue_active: bool = false
 var near_captain := false
 var near_supply_chest: bool = false
+var found_supplies: bool = false
 
 func _ready():
 	dialogue_box.visible = false
@@ -38,9 +39,10 @@ func _process(delta):
 		"\"Go on ahead and see if you can find any supplies. I will see what can be saved here.\""
 	])
 			elif near_supply_chest:
+				found_supplies = true
 				start_dialogue([
-		"You find a damp supply chest.",
-		"Most of it is ruined, but a few tools might still be useful."
+				"You find a damp supply chest.",
+				"Most of it is ruined, but a few tools might still be useful."
 	])
 			else:
 				try_inspect_object()

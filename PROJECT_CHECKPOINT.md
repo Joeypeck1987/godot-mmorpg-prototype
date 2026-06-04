@@ -125,3 +125,11 @@ Godot version: 4.3 stable
 - SupplyChest dialogue works.
 - Captain dialogue and SupplyChest dialogue both work correctly.
 - Current next step: make Ashport shore visually cleaner, then decide whether to create corner shore tiles or add a simple supply objective flag.
+
+## Latest Stable Checkpoint
+
+- SupplyChest still works after adding `found_supplies`.
+- Inspecting SupplyChest sets `found_supplies = true`.
+- Captain dialogue still works.
+- Chest dialogue still works.
+- Next step: make captain dialogue change after supplies are found, but only after reviewing the full `_process()` function first.
