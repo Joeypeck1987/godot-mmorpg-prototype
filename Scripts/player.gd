@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var speed: float = 120.0
+@export var animation_prefix: String = ""
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -48,7 +49,10 @@ func _physics_process(delta):
 	update_animation(direction)
 
 func update_animation(direction: Vector2):
-	if direction == Vector2.ZERO:
-		animated_sprite.play("idle_" + last_direction)
-	else:
-		animated_sprite.play("walk_" + last_direction)
+	var animation_type = "idle"
+
+	if direction != Vector2.ZERO:
+		animation_type = "walk"
+
+	var animation_name = animation_prefix + animation_type + "_" + last_direction
+	animated_sprite.play(animation_name)

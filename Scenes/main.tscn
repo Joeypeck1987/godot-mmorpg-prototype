@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=4 uid="uid://c157av8ry750v"]
+[gd_scene load_steps=76 format=4 uid="uid://c157av8ry750v"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_jwevj"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_rlusl"]
@@ -23,7 +23,17 @@
 [ext_resource type="Texture2D" uid="uid://exdjtwf6r5dh" path="res://Sprites/Player/joeyright_rightstep.png" id="13_7torg"]
 [ext_resource type="Texture2D" uid="uid://b6frpx2auhjox" path="res://Sprites/Player/joeyback_rightstep.png" id="14_1imlv"]
 [ext_resource type="Texture2D" uid="uid://bc0ofdcallta2" path="res://Sprites/Player/joeyback_leftstep.png" id="15_cjn7t"]
+[ext_resource type="Texture2D" uid="uid://ceblde44anavu" path="res://Sprites/Player/fplayerleft.png" id="16_0cf1t"]
+[ext_resource type="Texture2D" uid="uid://cskvjwd7i2hqu" path="res://Sprites/Player/fplayerback.png" id="17_a1ay3"]
+[ext_resource type="Texture2D" uid="uid://baky87ap4bcq0" path="res://Sprites/Player/fplayerright.png" id="17_ou6fc"]
+[ext_resource type="Texture2D" uid="uid://dx2qcemgwyxt2" path="res://Sprites/Player/fplayerrightstep.png" id="19_3pln1"]
+[ext_resource type="Texture2D" uid="uid://cilihe80nyd0r" path="res://Sprites/Player/fplayer.png" id="19_27c3v"]
 [ext_resource type="Texture2D" uid="uid://dl5vo42xw5hpo" path="res://Sprites/tiles/house01.png" id="19_dsx8n"]
+[ext_resource type="Texture2D" uid="uid://3hh01xwq2jyb" path="res://Sprites/Player/fplayerleftstep.png" id="20_whry4"]
+[ext_resource type="Texture2D" uid="uid://cmmupbe0miql2" path="res://Sprites/Player/fplayerleft_leftstep.png" id="21_by2pu"]
+[ext_resource type="Texture2D" uid="uid://diwew0qe2b30m" path="res://Sprites/Player/fplayerback_rightstep.png" id="21_d6p1o"]
+[ext_resource type="Texture2D" uid="uid://dg3b6rgrhjh4k" path="res://Sprites/Player/fplayerback_leftstep.png" id="22_1fyl0"]
+[ext_resource type="Texture2D" uid="uid://c6neib30soy5u" path="res://Sprites/Player/fplayerright_rightstep.png" id="22_5hwb6"]
 [ext_resource type="Texture2D" uid="uid://db445mv7w8ucn" path="res://Sprites/Boats/wreckedboat.png" id="22_8o8yk"]
 [ext_resource type="Texture2D" uid="uid://cgo28wmkptr0t" path="res://Sprites/NPC/captain_down.png" id="23_s680y"]
 [ext_resource type="Texture2D" uid="uid://pvyoh7x6cve4" path="res://Sprites/tiles/chest01.png" id="27_2cwel"]
@@ -154,6 +164,106 @@ size = Vector2(16, 12)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("19_27c3v")
+}],
+"loop": true,
+"name": &"female_idle_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_0cf1t")
+}],
+"loop": true,
+"name": &"female_idle_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_ou6fc")
+}],
+"loop": true,
+"name": &"female_idle_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_a1ay3")
+}],
+"loop": true,
+"name": &"female_idle_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_27c3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_3pln1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_27c3v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_whry4")
+}],
+"loop": true,
+"name": &"female_walk_down",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_0cf1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_by2pu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_0cf1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_by2pu")
+}],
+"loop": true,
+"name": &"female_walk_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_ou6fc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_5hwb6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_ou6fc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_5hwb6")
+}],
+"loop": true,
+"name": &"female_walk_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_a1ay3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_d6p1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_a1ay3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_1fyl0")
+}],
+"loop": true,
+"name": &"female_walk_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("6_5ysr1")
 }],
 "loop": true,
@@ -182,6 +292,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"idle_up",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_27c3v")
+}],
+"loop": true,
+"name": &"test_female_idle",
 "speed": 5.0
 }, {
 "frames": [{
@@ -416,6 +534,7 @@ z_index = 10
 y_sort_enabled = true
 position = Vector2(-954, 825)
 script = ExtResource("1_jwevj")
+animation_prefix = "female_"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(5, 18)
@@ -428,7 +547,7 @@ zoom = Vector2(2, 2)
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 position = Vector2(5, 20)
 sprite_frames = SubResource("SpriteFrames_uuwbo")
-animation = &"walk_down"
+animation = &"female_walk_left"
 
 [node name="InteractionArea" type="Area2D" parent="Player"]
 position = Vector2(5, 21)

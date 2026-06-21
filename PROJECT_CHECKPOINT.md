@@ -153,3 +153,14 @@ Godot version: 4.3 stable
 - After supplies, captain confirms they help but are not enough to sail.
 - Sea travel remains locked for much later in the story.
 - Next step: update/polish the intro so the ship gets pulled off course before Ashport.
+
+## Player Sprite / Character Choice Progress
+
+- Female 16x16 player sprite set has been added.
+- Female idle animations have been created for down, up, left, and right.
+- Female walk animations have been created for down, up, left, and right.
+- Female animations use 6 FPS to match the male player animations.
+- `player.gd` now supports an exported `animation_prefix`.
+- Leaving `animation_prefix` blank uses the original/default player animations.
+- Setting `animation_prefix` to `female_` uses the female animation set.
+- Future character creation can use this system to switch between male/default and female player sprites.
