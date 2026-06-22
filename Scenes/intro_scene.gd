@@ -10,8 +10,15 @@ var intro_lines := [
 	"Easy now. The tide carried you farther than most folk dare go.",
 	"The shore ahead is Ashport.",
 	"...Wait.",
-	"That current is wrong.",
+	"The current is all wrong.",
 	"Brace yourself!"
+]
+
+var wreck_lines := [
+	"The deck lurches beneath you.",
+	"Wood cracks.",
+	"Cold water rushes in.",
+	"For a moment, there is only the bell."
 ]
 
 var dialogue_index := 0
@@ -72,4 +79,36 @@ func transition_to_ashport() -> void:
 	tween.tween_property(fade_overlay, "modulate:a", 1.0, 1.5)
 	await tween.finished
 	
+	var wreck_label := Label.new()
+	add_child(wreck_label)
+	
+	wreck_label.text = ""
+	wreck_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	wreck_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	wreck_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	wreck_label.add_theme_color_override("font_color", Color.WHITE)
+	wreck_label.add_theme_font_size_override("font_size", 22)
+	
+	wreck_label.anchor_left = 0.0
+	wreck_label.anchor_top = 0.0
+	wreck_label.anchor_right = 1.0
+	wreck_label.anchor_bottom = 1.0
+	wreck_label.offset_left = 40
+	wreck_label.offset_top = 0
+	wreck_label.offset_right = -40
+	wreck_label.offset_bottom = 0
+	
+	for line in wreck_lines:
+		wreck_label.text = line 
+		await wait_for_interact()
+	
+	wreck_label.queue_free()
+	
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")
+
+func wait_for_interact() -> void:
+	while true:
+		await get_tree().process_frame
+		
+		if Input.is_action_just_pressed("interact"):
+			return

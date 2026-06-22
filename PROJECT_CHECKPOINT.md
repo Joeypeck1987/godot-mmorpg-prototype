@@ -230,3 +230,13 @@ Do not add combat, Affinity, sea travel, or full character creation before this 
 - Character selection is not implemented yet, but female animations are prepared.
 - Sea travel should remain locked until much later, possibly around the fifth town.
 - Affinity should awaken later and should not be part of starting character creation.
+
+## Intro Wreck Transition Progress
+
+- Intro dialogue has been updated so the captain notices the current pulling the boat off course.
+- After the final intro line, the scene fades to black.
+- Black-screen wreck text has been added.
+- Black-screen wreck text advances with the existing interact input.
+- Instruction text was intentionally omitted from the black-screen wreck text for a more cinematic feel.
+- Intro still transitions into `res://Scenes/main.tscn`.
+- Future polish: add wave/crash/wood-break sound effects during the black-screen wreck moment.
