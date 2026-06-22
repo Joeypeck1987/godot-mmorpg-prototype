@@ -270,3 +270,10 @@ Do not add combat, Affinity, sea travel, or full character creation before this 
 - Captain auto-dialogue now only plays after the intro wreck transition.
 - Running `main.tscn` directly no longer triggers the intro captain dialogue automatically.
 - The meta flag is removed after use so the dialogue does not repeat.
+
+## House Exit Spawn Fix
+
+- Added `HouseExitSpawn` Marker2D outside the house in `main.tscn`.
+- `house_interior.gd` now sets `main_spawn_marker` before returning to `main.tscn`.
+- `main.gd` checks for `main_spawn_marker` on load and moves the player to the matching Marker2D.
+- Player now exits the house outside the house door instead of respawning at the opening scene/default player position.

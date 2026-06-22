@@ -675,6 +675,9 @@ shape = SubResource("RectangleShape2D_sskar")
 position = Vector2(6.10352e-05, -0.333252)
 shape = SubResource("RectangleShape2D_0d4u4")
 
+[node name="HouseExitSpawn" type="Marker2D" parent="."]
+position = Vector2(-54, -57)
+
 [connection signal="body_entered" from="House01/DoorArea" to="." method="_on_door_area_body_entered"]
 [connection signal="body_exited" from="House01/DoorArea" to="." method="_on_door_area_body_exited"]
 [connection signal="body_entered" from="House02/DoorArea" to="." method="_on_door_area_body_entered"]

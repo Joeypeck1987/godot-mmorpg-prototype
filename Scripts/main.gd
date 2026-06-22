@@ -18,6 +18,13 @@ func _ready():
 	dialogue_box.visible = false
 	MusicManager.play_music("res://Audio/ashport.ogg", -8.0)
 	
+	if get_tree().has_meta("main_spawn_marker"):
+		var marker_name = get_tree().get_meta("main_spawn_marker")
+		get_tree().remove_meta("main_spawn_marker")
+		
+		var spawn_marker = get_node_or_null(marker_name)
+		if spawn_marker != null:
+			player.global_position = spawn_marker.global_position
 	fade_overlay.position = Vector2.ZERO
 	fade_overlay.size = get_viewport_rect().size
 	fade_overlay.color = Color.BLACK

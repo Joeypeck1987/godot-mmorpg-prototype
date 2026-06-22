@@ -111,6 +111,7 @@ func _on_bookshelf_inspect_area_body_exited(body):
 
 func _on_exit_area_body_entered(body):
 	if body == player:
+		get_tree().set_meta("main_spawn_marker", "HouseExitSpawn")
 		get_tree().change_scene_to_file("res://Scenes/main.tscn")
 
 #Stair signal functions
