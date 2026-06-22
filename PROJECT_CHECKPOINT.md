@@ -254,3 +254,11 @@ Do not add combat, Affinity, sea travel, or full character creation before this 
 - Wreck text still advances with the existing interact input.
 - Intro still transitions into `res://Scenes/main.tscn`.
 - Next step: add automatic captain dialogue when Ashport loads.
+
+## Auto Captain Dialogue Progress
+
+- Captain auto-dialogue now starts after Ashport loads.
+- Auto-dialogue begins after the Ashport fade-in finishes.
+- Captain reacts to the wreck and directs the player to search the shore.
+- Ashport Arrival flow now works from intro to wreck transition to captain dialogue.
+- Future polish: make auto-dialogue only happen after the intro wreck, not every time `main.tscn` loads.
