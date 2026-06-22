@@ -164,3 +164,69 @@ Godot version: 4.3 stable
 - Leaving `animation_prefix` blank uses the original/default player animations.
 - Setting `animation_prefix` to `female_` uses the female animation set.
 - Future character creation can use this system to switch between male/default and female player sprites.
+
+## Next Session Plan
+
+Next priority: polish the intro wreck transition for the Ashport Arrival demo.
+
+Planned order:
+1. Review `intro_scene.gd` before editing.
+2. Update captain intro dialogue so the current pulls the boat off course.
+3. Add a fade-to-black wreck moment.
+4. Add short black-screen text during the wreck.
+5. Transition into Ashport as normal.
+6. Later: add automatic captain dialogue when Ashport loads.
+
+Do not start character creation yet. Female player animations are prepared, but character selection can wait until the Ashport Arrival demo loop feels presentable.
+
+## Current Immediate Priority
+
+- Next major task: polish the intro wreck transition.
+- The intro should eventually include:
+  - calm boat/captain dialogue
+  - player naming and character choice later
+  - current pulls the ship off course
+  - fade to black
+  - short black-screen wreck text
+  - transition into Ashport
+  - Ashport music fades in
+  - captain auto-dialogue near the wreck
+- For now, do not build full character creation yet.
+- Focus first on making the Ashport Arrival demo loop feel presentable.
+
+## Demo Target: Ashport Arrival
+
+Goal: create a small playable prototype slice suitable for a private demo or LinkedIn progress clip.
+
+Target flow:
+1. Boat intro begins.
+2. Current pulls ship off course.
+3. Screen fades to black with short wreck text.
+4. Player arrives at Ashport shore.
+5. Captain talks near the wrecked boat.
+6. Player finds SupplyChest.
+7. Captain dialogue changes after supplies are found.
+8. Player is directed into Ashport.
+
+Do not add combat, Affinity, sea travel, or full character creation before this loop feels polished.
+
+## Assistant Workflow Rules
+
+- Move slowly and step-by-step.
+- During Godot editor work, confirm the current node/layer/script before giving instructions.
+- Only change one system at a time.
+- Save after every stable working change.
+- For code errors, paste and review the full function before making edits.
+- Do not diagnose syntax errors from partial screenshots unless the full function is visible.
+- Avoid long task lists during active editing.
+
+## Known Unfinished Items
+
+- Shore corner tiles are missing and should be created later.
+- Water animation is not implemented yet.
+- Captain auto-dialogue after Ashport load is not implemented yet.
+- Intro wreck transition is not implemented yet.
+- Character naming is not implemented yet.
+- Character selection is not implemented yet, but female animations are prepared.
+- Sea travel should remain locked until much later, possibly around the fifth town.
+- Affinity should awaken later and should not be part of starting character creation.

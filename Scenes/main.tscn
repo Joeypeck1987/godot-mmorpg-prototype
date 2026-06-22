@@ -534,7 +534,6 @@ z_index = 10
 y_sort_enabled = true
 position = Vector2(-954, 825)
 script = ExtResource("1_jwevj")
-animation_prefix = "female_"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2(5, 18)
