@@ -598,6 +598,7 @@ mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="WreckedBoat" type="Sprite2D" parent="."]
+z_index = 20
 position = Vector2(-976, 917)
 texture = ExtResource("22_8o8yk")
 

@@ -277,3 +277,11 @@ Do not add combat, Affinity, sea travel, or full character creation before this 
 - `house_interior.gd` now sets `main_spawn_marker` before returning to `main.tscn`.
 - `main.gd` checks for `main_spawn_marker` on load and moves the player to the matching Marker2D.
 - Player now exits the house outside the house door instead of respawning at the opening scene/default player position.
+
+## WreckedBoat Layering Fix
+
+- WreckedBoat visual layering was adjusted.
+- Player was visually overlapping the wrecked boat again.
+- WreckedBoat now has Y Sort disabled and a higher Z Index so it stays visually above the player.
+- WreckedBoat collision still blocks the player.
+- This is acceptable for now, though a more advanced future fix may split large objects into separate front/back visual layers.
