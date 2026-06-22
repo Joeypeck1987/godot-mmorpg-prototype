@@ -240,3 +240,17 @@ Do not add combat, Affinity, sea travel, or full character creation before this 
 - Instruction text was intentionally omitted from the black-screen wreck text for a more cinematic feel.
 - Intro still transitions into `res://Scenes/main.tscn`.
 - Future polish: add wave/crash/wood-break sound effects during the black-screen wreck moment.
+
+## Intro Wreck Sound Progress
+
+- Wreck sound effects have been added to the intro black-screen wreck moment.
+- New audio files added:
+  - `wreck_wave_swell_original.wav`
+  - `wreck_wood_crack_original.wav`
+  - `wreck_crash_impact_original.wav`
+  - `wreck_low_bell_original.wav`
+- `intro_scene.gd` now creates an `AudioStreamPlayer` for wreck sound effects.
+- Each black-screen wreck line triggers a matching sound effect.
+- Wreck text still advances with the existing interact input.
+- Intro still transitions into `res://Scenes/main.tscn`.
+- Next step: add automatic captain dialogue when Ashport loads.

@@ -6,6 +6,15 @@ extends Control
 @onready var dialogue_text: Label = $DialogueLayer/DialogueBox/DialogueText
 @onready var fade_overlay: ColorRect = $FadeOverlay
 
+var wreck_sfx_player: AudioStreamPlayer
+
+var wreck_sounds: Array[AudioStream] = [
+	preload("res://Audio/wreck_wave_swell_original.wav"),
+	preload("res://Audio/wreck_wood_crack_original.wav"),
+	preload("res://Audio/wreck_crash_impact_original.wav"),
+	preload("res://Audio/wreck_low_bell_original.wav")
+]
+
 var intro_lines := [
 	"Easy now. The tide carried you farther than most folk dare go.",
 	"The shore ahead is Ashport.",
@@ -35,6 +44,10 @@ func _ready() -> void:
 	
 	fade_overlay.color = Color.BLACK
 	fade_overlay.modulate.a = 1.0
+	
+	wreck_sfx_player = AudioStreamPlayer.new()
+	add_child(wreck_sfx_player)
+	wreck_sfx_player.volume_db = -6.0
 	
 	MusicManager.play_music("res://Audio/intro.ogg", -10.0)
 	
@@ -98,8 +111,9 @@ func transition_to_ashport() -> void:
 	wreck_label.offset_right = -40
 	wreck_label.offset_bottom = 0
 	
-	for line in wreck_lines:
-		wreck_label.text = line 
+	for i in wreck_lines.size():
+		wreck_label.text = wreck_lines[i]
+		play_wreck_sound(i)
 		await wait_for_interact()
 	
 	wreck_label.queue_free()
@@ -112,3 +126,10 @@ func wait_for_interact() -> void:
 		
 		if Input.is_action_just_pressed("interact"):
 			return
+
+func play_wreck_sound(index: int) -> void:
+	if index >= wreck_sounds.size():
+		return
+	
+	wreck_sfx_player.stream = wreck_sounds[index]
+	wreck_sfx_player.play()
