@@ -118,6 +118,7 @@ func transition_to_ashport() -> void:
 	
 	wreck_label.queue_free()
 	
+	get_tree().set_meta("play_ashport_intro_dialogue", true)
 	get_tree().change_scene_to_file("res://Scenes/main.tscn")
 
 func wait_for_interact() -> void:

@@ -262,3 +262,11 @@ Do not add combat, Affinity, sea travel, or full character creation before this 
 - Captain reacts to the wreck and directs the player to search the shore.
 - Ashport Arrival flow now works from intro to wreck transition to captain dialogue.
 - Future polish: make auto-dialogue only happen after the intro wreck, not every time `main.tscn` loads.
+
+## Ashport Intro Auto-Dialogue Polish
+
+- IntroScene now sets a scene-tree meta flag before loading `main.tscn`.
+- `main.gd` checks for `play_ashport_intro_dialogue` before starting the captain auto-dialogue.
+- Captain auto-dialogue now only plays after the intro wreck transition.
+- Running `main.tscn` directly no longer triggers the intro captain dialogue automatically.
+- The meta flag is removed after use so the dialogue does not repeat.

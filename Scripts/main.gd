@@ -27,13 +27,15 @@ func _ready():
 	tween.tween_property(fade_overlay, "modulate:a", 0.0, 1.5)
 	await tween.finished
 
-	start_dialogue([
-		"The captain coughs seawater from his throat and looks toward the wreck.",
-		"\"Well... she has looked better.\"",
-		"\"We are alive. That is the first bit of luck.\"",
-		"\"The second would be finding something useful before nightfall.\"",
-		"\"Check the shore. Barrels, crates, anything the tide gave back.\"",
-		"\"I will see what can be saved from the boat.\""
+	if get_tree().has_meta("play_ashport_intro_dialogue") and get_tree().get_meta("play_ashport_intro_dialogue") == true:
+		get_tree().remove_meta("play_ashport_intro_dialogue")
+		start_dialogue([
+			"The captain coughs seawater from his throat and looks toward the wreck.",
+			"\"Well... she has looked better.\"",
+			"\"We are alive. That is the first bit of luck.\"",
+			"\"The second would be finding something useful before nightfall.\"",
+			"\"Check the shore. Barrels, crates, anything the tide gave back.\"",
+			"\"I will see what can be saved from the boat.\""
 	])
 
 func _process(delta):
