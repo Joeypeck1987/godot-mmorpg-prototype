@@ -1,4 +1,4 @@
-[gd_scene load_steps=76 format=4 uid="uid://c157av8ry750v"]
+[gd_scene load_steps=81 format=4 uid="uid://c157av8ry750v"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_jwevj"]
 [ext_resource type="Script" path="res://Scripts/main.gd" id="1_rlusl"]
@@ -37,6 +37,11 @@
 [ext_resource type="Texture2D" uid="uid://db445mv7w8ucn" path="res://Sprites/Boats/wreckedboat.png" id="22_8o8yk"]
 [ext_resource type="Texture2D" uid="uid://cgo28wmkptr0t" path="res://Sprites/NPC/captain_down.png" id="23_s680y"]
 [ext_resource type="Texture2D" uid="uid://pvyoh7x6cve4" path="res://Sprites/tiles/chest01.png" id="27_2cwel"]
+[ext_resource type="Texture2D" uid="uid://c77oy28gn28ek" path="res://Sprites/Objects/barrel01.png" id="38_km3fr"]
+[ext_resource type="Texture2D" uid="uid://cylwdrgkwnsrb" path="res://Sprites/Objects/planks01.png" id="39_mhute"]
+[ext_resource type="Texture2D" uid="uid://cev67txt7g4mt" path="res://Sprites/Objects/planks02.png" id="40_ndoj7"]
+[ext_resource type="Texture2D" uid="uid://706qsm3ugi7i" path="res://Sprites/Objects/rope.png" id="41_cgt6g"]
+[ext_resource type="Texture2D" uid="uid://dbohhdnocy2bk" path="res://Sprites/Objects/rock01.png" id="42_61a24"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gebbl"]
 texture = ExtResource("2_sij28")
@@ -678,6 +683,54 @@ shape = SubResource("RectangleShape2D_0d4u4")
 
 [node name="HouseExitSpawn" type="Marker2D" parent="."]
 position = Vector2(-54, -57)
+
+[node name="Props" type="Node2D" parent="."]
+
+[node name="Barrel01" type="Sprite2D" parent="Props"]
+position = Vector2(-1017, 810)
+scale = Vector2(0.624999, 0.656248)
+texture = ExtResource("38_km3fr")
+
+[node name="Barrel02" type="Sprite2D" parent="Props"]
+position = Vector2(-1003, 810)
+scale = Vector2(0.624999, 0.656248)
+texture = ExtResource("38_km3fr")
+
+[node name="Barrel03" type="Sprite2D" parent="Props"]
+position = Vector2(-618, 847)
+scale = Vector2(0.624999, 0.656248)
+texture = ExtResource("38_km3fr")
+
+[node name="Planks01" type="Sprite2D" parent="Props"]
+position = Vector2(-564, 691)
+scale = Vector2(0.71875, 0.75)
+texture = ExtResource("39_mhute")
+
+[node name="Planks02" type="Sprite2D" parent="Props"]
+position = Vector2(-404.5, 692.75)
+scale = Vector2(0.718748, 0.671874)
+texture = ExtResource("40_ndoj7")
+
+[node name="Rope01" type="Sprite2D" parent="Props"]
+position = Vector2(-1017, 856)
+scale = Vector2(0.453122, 0.484374)
+texture = ExtResource("41_cgt6g")
+
+[node name="Rock01" type="Sprite2D" parent="Props"]
+position = Vector2(-658, 354)
+texture = ExtResource("42_61a24")
+
+[node name="Rock02" type="Sprite2D" parent="Props"]
+position = Vector2(-628, 354)
+texture = ExtResource("42_61a24")
+
+[node name="Rock03" type="Sprite2D" parent="Props"]
+position = Vector2(-368, 528)
+texture = ExtResource("42_61a24")
+
+[node name="Rock04" type="Sprite2D" parent="Props"]
+position = Vector2(-400, 560)
+texture = ExtResource("42_61a24")
 
 [connection signal="body_entered" from="House01/DoorArea" to="." method="_on_door_area_body_entered"]
 [connection signal="body_exited" from="House01/DoorArea" to="." method="_on_door_area_body_exited"]
