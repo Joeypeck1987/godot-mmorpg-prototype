@@ -285,3 +285,77 @@ Do not add combat, Affinity, sea travel, or full character creation before this 
 - WreckedBoat now has Y Sort disabled and a higher Z Index so it stays visually above the player.
 - WreckedBoat collision still blocks the player.
 - This is acceptable for now, though a more advanced future fix may split large objects into separate front/back visual layers.
+
+## Recent Progress — Ashport Shore Visual Pass
+
+* Added a `Props` parent node under `Main` in `main.tscn` to organize decorative map objects.
+* Added new decorative shore/wreck props as `Sprite2D` children:
+
+  * `Barrel01`
+  * `Barrel02`
+  * `Barrel03`
+  * `Planks01`
+  * `Planks02`
+  * `Rope01`
+  * `Rock01`
+  * `Rock02`
+  * `Rock03`
+  * `Rock04`
+* Organized new prop sprites into:
+
+```text
+res://Sprites/Objects/
+```
+
+* Current object sprites include:
+
+  * `barrel01.png`
+  * `planks01.png`
+  * `planks02.png`
+  * `rock01.png`
+  * `rope.png`
+
+* Kept existing tile/map assets in the `tiles` folder to avoid breaking current TileSet and map references.
+
+* Placed barrels, planks, rope, and rocks around the Ashport dock/wreck area.
+
+* Props are currently visual-only `Sprite2D` objects with no collision.
+
+* Playtest confirmed the props do not look strange while walking around.
+
+* The shore now better communicates the wreck scene:
+
+  * barrels and rope read as ship gear
+  * planks read as washed-up wreck debris
+  * rocks help the shoreline feel more natural
+
+## Recent Progress — Water Palette Update
+
+* Adjusted the water visuals to better match the current 4-color palette:
+
+  * `#f2f2f2`
+  * `#a9a9a9`
+  * `#545454`
+  * `#000000`
+* Brightened the water so it no longer feels overly dark compared to the shore.
+* Confirmed the active water map was using the water spritesheet rather than the individual `water01.png` file.
+* Updated the correct water spritesheet file so the map displays the brighter water correctly.
+* Current visual direction:
+
+  * shore/land uses mostly light tones
+  * water uses mid-gray tones with light wave marks
+  * rocks/wood use darker tones with light highlights
+  * black is reserved for outlines and strongest shadows
+
+## Current Visual Style Rule
+
+The project is currently aiming to stay within a simple 4-color grayscale palette:
+
+```text
+#f2f2f2  near-white / highlight
+#a9a9a9  light gray / mid-light
+#545454  dark gray / shadow
+#000000  black / outline/deep shadow
+```
+
+New sprites should try to use only these four colors unless there is a strong reason to expand the palette later.
